@@ -29,6 +29,7 @@ class App extends React.Component {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
+  
 //c компонента формі приходят данные при submit(ContactForm)
   // 2)метод добавление контакта который передается форме для того чтобы
   // получить значение написаного в форме =>
