@@ -15,6 +15,9 @@ class App extends React.Component {
     filter: '',
   };
 
+//c компонента формі приходят данные при submit(ContactForm)
+  // 2)метод добавление контакта который передается форме для того чтобы
+  // получить значение написаного в форме =>
   addContact = ({ name, number }) => {
     const contact = {
       name,
@@ -23,7 +26,6 @@ class App extends React.Component {
     };
 
     this.setState(({ contacts }) => {
-      
       if (
         contacts.find(
           contact => contact.name.toLowerCase() === name.toLowerCase()
@@ -31,6 +33,8 @@ class App extends React.Component {
       ) {
         return alert(`${name} is already in contacts!`);
       }
+      // => 
+      // 3) и кидаем его в STATE на базе предыдущего 
       return {
         contacts: [contact, ...contacts],
       };
